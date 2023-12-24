@@ -1,0 +1,25 @@
+<nav>
+    <ul>
+        <li><a href="/">Dashboard</a></li>
+
+        <% if (global.isLoggedIn) { %>
+            <li><a href="/logout">Logout</a></li>
+          <% } else { %>
+            <li><a href="/login">Login</a></li>
+          <%}%>
+
+        <% if (global.userType=='driver' ) {%>
+                <li><a href="/driver">Driver</a></li>
+        <% }else if(global.userType=='admin' ) {%>
+                <li><a href="/appointment">Admin</a></li>
+        <%} else if(global.userType=='examiner' ) { %>
+                <li><a href="/examiner">Examiner</a></li>
+        <%}%>
+
+    </ul>
+</nav>
+
+<!-- 
+    ? Student Name: Meet Yogesh Panchal
+    ? Student Id: 8771023
+ -->

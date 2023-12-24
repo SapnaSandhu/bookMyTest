@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('layouts/header') %>
+
+    <body>
+        <%- include('layouts/navbar',{userType}) %>
+            <header>
+                <h1>Appointment Page</h1>
+            </header>
+            <main id="examiner-root">
+                <form class="center" action="/createSlot" enctype="application/x-www-form-urlencoded" method="post">
+                    <label for="slot-date">Chose date to check time slots:</label>
+                    <input type="date" id="slot-date" name="date">
+                    <label for="slot-date">Chose a time slot for given date :</label>
+                    <select name="time" id="slot-time">
+                    </select>
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="data-display">
+                    <%data.forEach(driver => {%>
+                        <div id="drivers-info">
+                            <div id="driver-name">
+                                    <p><%= driver.FName%> <%= driver.LName%></p>
+                                </div>
+                                <div id="carinfo-parent">
+                                    <div id="car-info">
+                                        <p>Exam Level: <%if (driver.isAppointmentForG2) {%> 
+                                            G2
+                                        <%}else { %>
+                                            G
+                                        <%}%>
+
+                                        </p>
+                                        <p>Result: <%if (driver.result.hasUserPassedTest) {%> 
+                                            Candidate has passed the test
+                                        <%}else { %>
+                                            Candidate has failed the test
+                                        <%}%>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                    <% }); %>
+                </div>
+            </main>
+    </body>
+    <%- include('layouts/scripts') %>
+</html>
+<!-- 
+    ? Student Name: Meet Yogesh Panchal
+    ? Student Id: 8771023
+ -->

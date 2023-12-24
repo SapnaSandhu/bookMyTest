@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('layouts/header') %>
+
+    <body id="login-root">
+        <%- include('layouts/navbar') %>
+        <header>
+            <h1>Driver Result</h1>
+        </header>
+        <form method="post" action="/declareResult" enctype="application/x-www-form-urlencoded">
+            <main class="login-parent-view">
+                <section class="g2-signup">
+                    <fieldset>
+                        <legend>Result</legend>
+                        <div id="candidate-result">
+                            <label for="candidate-result">Candidate Passed the test:</label>
+                            <input type="checkbox" <% if(sendingData.hasUserPassedTest) {%> checked <%}%>name="hasUserPassedTest" id="candidate-result">
+                        </div>
+
+                        <label for="examinerComments">Examiner Comments:</label>
+                        <textarea name="examinerComments" id="examinerComments"  cols="30" rows="10">
+                            <%= sendingData.examinerComments %>
+                        </textarea>
+                        <input type="text" name="userId" value=<%=sendingData.id %>  hidden>
+                    </fieldset>
+                    <button type="submit">Submit</button>
+                </section>
+            </main>
+        </form>
+        <%- include('layouts/scripts') %>
+    </body>
+
+</html>
+
+<!-- 
+    ? Student Name: Meet Yogesh Panchal
+    ? Student Id: 8771023
+ -->

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('layouts/header') %>
+
+    <body>
+        <%- include('layouts/navbar',{userType:payload.isDriver?'driver':undefined}) %>
+            <main class="container">
+                <section id="content">                    
+                    <div id="dash-content">
+                        <% if(payload.isDriver) {%>
+                        <button><a href="/gTest">G Test</a></button>
+                        <% if(payload.data.FName !=="") {%>
+                        <button><a href="/editDriverDetails">G2 Test</a></button>
+                        <%}else {%>
+                        <button><a href="/g2Test">G2 Test</a></button>
+                        <%}%>
+                        <%}%>
+                    </div>
+                </section>
+            </main>
+    </body>
+
+</html>
+
+<!-- 
+    main_background: https://unsplash.com/photos/tyhpK_QelPo;
+ -->
+<!-- 
+    ? Student Name: Meet Yogesh Panchal
+    ? Student Id: 8771023
+ -->

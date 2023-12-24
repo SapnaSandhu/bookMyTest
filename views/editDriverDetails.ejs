@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('layouts/header',{userType:userType}) %>
+
+    <body>
+        <%- include('layouts/navbar') %>
+            <header>
+                <h1>Edit Your Details</h1>
+            </header>
+            <form action="/saveEditDetails" method="POST" enctype="application/x-www-form-urlencoded">
+                <main class="login-parent-view">
+                    <section class="g2-signup">
+                        <fieldset>
+                            <legend>Driver Details</legend>
+                            <input type="text" value="<%= userDetail.FName %>" placeholder="First Name" name="firstName">
+                            <input type="text" value="<%= userDetail.LName %>" placeholder="Last Name" name="lastName">
+                            <input type="date" value="<%= new Date(userDetail.dob).toLocaleDateString('en-CA') %>" placeholder="Date of birth" name="dob">
+                            <input type="text" value="<%= userDetail.uid %>" placeholder="UID" name="uid" disabled>
+                            <input type="text" value="<%= userDetail.licenseNumber %>" placeholder="License Number" name="licenseNumber" disabled>
+                            <input type="hidden" name="id" value="<%= userDetail._id %>">
+                        </fieldset>
+                        <fieldset>
+                            <legend>Address</legend>
+                            <input required type="text" value="<%= userDetail.address.houseNo %>" placeholder="House/Apt Number" name="houseNo">
+                            <input required type="text" value="<%= userDetail.address.streetName %>" placeholder="Street Name" name="streetName">
+                            <input required type="text" value="<%= userDetail.address.city %>" placeholder="City" name="city">
+                            <input required type="text" value="<%= userDetail.address.province %>" placeholder="Province" name="province">
+                            <input required type="text" value="<%= userDetail.address.postalCode %>" placeholder="Postal Code" name="postalCode">
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Car details</legend>
+                            <input required value="<%= userDetail.carDeatils.make %>" type="text" placeholder="Make" name="make">
+                            <input required value="<%= userDetail.carDeatils.model %>" type="text" placeholder="Model" name="model">
+                            <input required value="<%= userDetail.carDeatils.year %>" type="text" placeholder="Year" name="year">
+                            <input required value="<%= userDetail.carDeatils.plateNumber  %>" type="text" placeholder="Plate Number" name="plateNumber">
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Book Appointment</legend>
+                            <label for="date">Select date</label>
+                            <input type="date" name="date" id="date">
+
+                            <label for="time">Select time</label>
+                            <select name="time" id="time">
+                            </select>
+                            <input type="text" name="appointmentId" value="" hidden id="appointmentId">
+                        </fieldset>
+
+
+                        <button type="submit">SUBMIT</button>
+                    </section>
+                </main>
+            </form>
+            <%- include('layouts/scripts') %>
+    </body>
+
+</html>
+<!-- 
+    ? Student Name: Meet Yogesh Panchal
+    ? Student Id: 8771023
+ -->

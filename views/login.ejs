@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('layouts/header') %>
+
+    <body id="login-root">
+        <%- include('layouts/navbar',{userType:null}) %>
+            <main class="login-parent-view">
+                <form action="/loginUser" method="POST" enctype="application/x-www-form-urlencoded" class="login-child">
+                    <p>Login</p>
+                    <input type="text" placeholder="Username" name="uname" autocomplete="off">
+                    <input type="password" placeholder="Password" name="password" autocomplete="off">
+                    <button>LOGIN</button>
+                </form>
+                <div class="seperator"></div>
+                <form action="/registerUser" method="post" class="login-child" enctype="application/x-www-form-urlencoded">
+                    <p>Sign Up</p>
+                    <input type="text" placeholder="Username" name="uname" autocomplete="off">
+                    <input type="password" placeholder="Password" name="password" autocomplete="off">
+                    <input type="password" placeholder="Confrim Password" name="confirmPassword" autocomplete="off">
+                    <div class="dropdown">
+                        <label for="cars">User Type:</label>
+                        <select name="userType">
+                            <option value="driver">Driver</option>
+                            <option value="examiner">Examiner</option>
+                            <option value="admin">Admin</option>
+                            <option value="coordinator">Coordinator</option>
+                        </select>
+                    </div>
+                    <button>SIGN UP</button>
+                </form>
+            </main>
+    </body>
+
+</html>
+<!-- 
+    ? Student Name: Meet Yogesh Panchal
+    ? Student Id: 8771023
+ -->

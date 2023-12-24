@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('layouts/header') %>
+
+    <body>
+        <%- include('layouts/navbar',{userType:userType}) %>
+            <header>
+                <h1>G2 Test</h1>
+            </header>
+            <form action="/g2Test" method="POST" enctype="multipart/form-data">
+                <main class="login-parent-view">
+                    <section class="g2-signup">
+                        <fieldset>
+                            <legend>Driver Details</legend>
+                            <input required type="text" placeholder="First Name" name="FName">
+                            <input required type="text" placeholder="Last Name" name="LName">
+                            <input required type="date" placeholder="Date of birth" name="dob">
+                            <input required type="text" placeholder="UID" name="uid">
+                            <input required type="text" id="licenseNumber" placeholder="License Number"
+                                name="licenseNumber">
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Address</legend>
+                            <input required type="text" placeholder="House/Apt Number" name="houseNo">
+                            <input required type="text" placeholder="Street Name" name="streetName">
+                            <input required type="text" placeholder="City" name="city">
+                            <input required type="text" placeholder="Province" name="province">
+                            <input required type="text" placeholder="Postal Code" name="postalCode">
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Car details</legend>
+                            <input required type="text" placeholder="Make" name="make">
+                            <input required type="text" placeholder="Model" name="model">
+                            <input required type="text" placeholder="Year" name="year">
+                            <input required type="text" placeholder="Plate Number" name="plateNumber">
+                        </fieldset>
+
+                        <input required name="images" type="file" id="image-upload" multiple accept=".jpeg, .jpg" />
+
+                        <button id="g2submit">SUBMIT</button>
+                    </section>
+                </main>
+            </form>
+            <%- include('layouts/scripts') %>
+    </body>
+
+</html>
+<!-- 
+    ? Student Name: Meet Yogesh Panchal
+    ? Student Id: 8771023
+ -->

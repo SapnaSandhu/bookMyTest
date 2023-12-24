@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('layouts/header') %>
+
+    <body id="login-root">
+        <%- include('layouts/navbar') %>
+        <header>
+            <h1>G Test</h1>
+        </header>
+        <form method="post" action="/bookGDate" enctype="application/x-www-form-urlencoded">
+            <main class="login-parent-view">
+                <section class="g2-signup">
+                    <fieldset>
+                        <legend>Book Appointment</legend>
+                        <label for="date">Select date</label>
+                        <input type="date" name="date" id="date">
+
+                        <label for="time">Select time</label>
+                        <select name="time" id="time">
+                        </select>
+                        <input type="text" name="appointmentId" value="" hidden id="appointmentId">
+                    </fieldset>
+                    <button type="submit">Submit</button>
+                </section>
+            </main>
+        </form>
+        <%- include('layouts/scripts') %>
+    </body>
+
+</html>
+
+<!-- 
+    ? Student Name: Meet Yogesh Panchal
+    ? Student Id: 8771023
+ -->
